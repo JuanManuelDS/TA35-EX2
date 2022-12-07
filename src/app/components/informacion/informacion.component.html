@@ -1,5 +1,17 @@
-<p class="mb-2">Nombre: {{ datosFormulario ? datosFormulario.nombre : "" }}</p>
-<p class="mb-2">Email: {{ datosFormulario ? datosFormulario.email : "" }}</p>
-<p class="mb-2">
-  Mensaje: {{ datosFormulario ? datosFormulario.mensaje : "" }}
-</p>
+<hr />
+<div class="row">
+  <div class="col-sm-3 me-2">
+    <h4>Datos del formulario</h4>
+  </div>
+  <div class="col-sm-8">
+    <p class="mb-2">
+      Nombre: {{ datosFormulario ? datosFormulario.nombre : "" }}
+    </p>
+    <p class="mb-2">
+      Email: {{ datosFormulario ? datosFormulario.email : "" }}
+    </p>
+    <p class="mb-2">
+      Mensaje: {{ datosFormulario ? datosFormulario.mensaje : "" }}
+    </p>
+  </div>
+</div>
