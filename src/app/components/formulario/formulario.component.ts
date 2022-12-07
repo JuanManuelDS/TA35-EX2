@@ -22,7 +22,8 @@ export class FormularioComponent {
   guardar() {
     //Si el formulario es válido entonces lo envío, sino no
     if (this.miFormulario.valid) {
-      this.formularioCompleto.emit(this.formulario);
+      this.formularioCompleto.emit({ ...this.formulario });
+      this.miFormulario.reset();
     } else {
       return;
     }
