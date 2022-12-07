@@ -1,0 +1,11 @@
+<div class="container contenedor">
+  <div class="row">
+    <app-formulario
+      (formularioCompleto)="enviarFormulario($event)"
+    ></app-formulario>
+  </div>
+
+  <div class="row">
+    <app-informacion [datosFormulario]="formulario"></app-informacion>
+  </div>
+</div>

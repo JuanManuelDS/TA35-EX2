@@ -1,0 +1,90 @@
+<h2 class="text-center mt-4">Formulario de contacto</h2>
+<hr />
+
+<form (ngSubmit)="guardar()" #miFormulario="ngForm" class="mb-4">
+  <div class="row mb-3">
+    <label class="col-form-label col-sm-3">Nombre</label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        [(ngModel)]="formulario.nombre"
+        placeholder="Nombre y apellido"
+        required
+      />
+      <span class="form-text text-danger" *ngIf="validarCampo('nombre')"
+        >Introduzca su nombre y apellido</span
+      >
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-form-label col-sm-3">Email</label>
+    <div class="col-sm-9">
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="formulario.email"
+        placeholder="email@dominio.com"
+        email
+        required
+      />
+      <span class="form-text text-danger" *ngIf="validarCampo('email')"
+        >Introduzca un email válido</span
+      >
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-form-label col-sm-3">Mensaje</label>
+    <div class="col-sm-9">
+      <textarea
+        name="mensaje"
+        class="form-control"
+        [(ngModel)]="formulario.mensaje"
+        cols="30"
+        rows="5"
+        placeholder="Mensaje..."
+        required
+      ></textarea>
+      <span class="form-text text-danger" *ngIf="validarCampo('mensaje')"
+        >Introduzca un mensaje</span
+      >
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label class="col-form-label col-sm-3">2 + 3 = ?</label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        name="validacion"
+        #validacion="ngModel"
+        [(ngModel)]="formulario.validacion"
+        placeholder="Respuesta..."
+        required
+      />
+      <span class="form-text text-danger" *ngIf="validarCampo('validacion')"
+        >Este campo es obligatorio</span
+      >
+      <span
+        class="form-text text-danger"
+        *ngIf="
+          validacion.value != '5' &&
+          validacion.touched &&
+          validacion.value != ''
+        "
+        >Validación incorrecta</span
+      >
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-end">
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </div>
+</form>
